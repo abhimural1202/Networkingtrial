@@ -55,4 +55,4 @@ jobs:
             docker pull abhimuralii/my-app:latest
             docker stop my-container || true
             docker rm my-container || true
-            docker run -d --name my-container -p 80:80 abhimuralii/my-app:latest
+            docker run -d --name my-container -p 8080:80 abhimuralii/my-app:latest
