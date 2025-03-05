@@ -33,7 +33,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker buildx build --platform linux/amd64 -t my-app:latest -f ./Dockerfile . --push
+        docker buildx build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/my-app:latest -f ./Dockerfile . --push
+
 
   deploy:
     needs: build
