@@ -33,12 +33,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker buildx build --platform linux/amd64 -t my-app:latest -f ./Dockerfile .
-
-    - name: Push Docker image to Docker Hub
-      run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-app:latest
-      if: github.ref == 'refs/heads/main'
+        docker buildx build --platform linux/amd64 -t my-app:latest -f ./Dockerfile . --push
 
   deploy:
     needs: build
