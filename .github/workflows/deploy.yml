@@ -35,7 +35,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker buildx build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/my-app:latest -f Dockerfile . --push
+          docker buildx build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/my-app:latest -f /home/runner/work/Networkingtrial/Networkingtrial/Dockerfile /home/runner/work/Networkingtrial/Networkingtrial --push
+
 
   deploy:
     needs: build
